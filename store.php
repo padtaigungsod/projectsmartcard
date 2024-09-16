@@ -8,13 +8,20 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-// เชื่อมต่อฐานข้อมูล
-$conn = mysqli_connect("localhost", "root", "", "projectsmartcard");
+$host = 'junction.proxy.rlwy.net';
+$port = '13506';
+$dbname = 'railway';
+$username = 'root';
+$password = 'YvHGSjIeEzwZcJbdstAFfEhaWGViYLdb';
 
-// ตรวจสอบการเชื่อมต่อฐานข้อมูล
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
+
 
 // ดึงข้อมูลจาก session
 $store_email = $_SESSION['email'];

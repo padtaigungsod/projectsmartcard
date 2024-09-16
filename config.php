@@ -1,16 +1,17 @@
 <?php
+$host = 'junction.proxy.rlwy.net';
+$port = '13506';
+$dbname = 'railway';
+$username = 'root';
+$password = 'YvHGSjIeEzwZcJbdstAFfEhaWGViYLdb';
 
-    $severname = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "projectsmartcard";
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
 
-    //create connection
-    $conn = mysqli_connect($severname, $username, $password, $dbname);
-
-    //checking connection
-    if(!$conn){
-        die("connection failed" . mysqli_connect_error());
-    }
 
 ?>

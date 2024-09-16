@@ -12,17 +12,20 @@
         header('location: login_store.php');
     }
 
-    // Connect to the database
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "projectsmartcard";
+    $host = 'junction.proxy.rlwy.net';
+$port = '13506';
+$dbname = 'railway';
+$username = 'root';
+$password = 'YvHGSjIeEzwZcJbdstAFfEhaWGViYLdb';
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     // ดึงอีเมลของผู้ใช้ที่ล็อกอิน
     $email = $_SESSION['email'];

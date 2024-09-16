@@ -13,13 +13,20 @@ if(isset($_GET['logout'])){
     exit();
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projectsmartcard";
+$host = 'junction.proxy.rlwy.net';
+$port = '13506';
+$dbname = 'railway';
+$username = 'root';
+$password = 'YvHGSjIeEzwZcJbdstAFfEhaWGViYLdb';
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
 
 // Check connection
 if ($conn->connect_error) {

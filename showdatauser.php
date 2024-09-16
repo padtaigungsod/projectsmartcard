@@ -13,18 +13,20 @@ if(isset($_GET['logout'])){
     exit();
 }
 
-$servername = "localhost"; // Replace with your database server
-$username = "root"; // Replace with your database username
-$password = ""; // Replace with your database password
-$dbname = "projectsmartcard"; // Replace with your database name
+$host = 'junction.proxy.rlwy.net';
+$port = '13506';
+$dbname = 'railway';
+$username = 'root';
+$password = 'YvHGSjIeEzwZcJbdstAFfEhaWGViYLdb';
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
+
 
 // Get selected date from form or default to today's date
 $date_filter = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');

@@ -2,12 +2,20 @@
 // แสดงข้อผิดพลาดของ SQL เพื่อการดีบัก
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-// เชื่อมต่อกับฐานข้อมูล
-$conn = mysqli_connect("localhost", "root", "", "projectsmartcard");
+$host = 'junction.proxy.rlwy.net';
+$port = '13506';
+$dbname = 'railway';
+$username = 'root';
+$password = 'YvHGSjIeEzwZcJbdstAFfEhaWGViYLdb';
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
+
 
 // รับค่าจากฟอร์มที่ส่งมาหลังจากการชำระเงิน
 $smartcard_id = $_POST['smartcard_id'];

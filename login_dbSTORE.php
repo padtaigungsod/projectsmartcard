@@ -4,13 +4,20 @@
 $email = $_POST["email"];
 $password = $_POST["password"];
 
-// เชื่อมต่อกับฐานข้อมูล
-$conn = mysqli_connect("localhost", "root", "", "projectsmartcard");
+$host = 'junction.proxy.rlwy.net';
+$port = '13506';
+$dbname = 'railway';
+$username = 'root';
+$password = 'YvHGSjIeEzwZcJbdstAFfEhaWGViYLdb';
 
-// ตรวจสอบการเชื่อมต่อ
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
+
 
 // SQL query
 $sql_store = "SELECT * FROM store WHERE email = '$email' AND password = '$password'";
