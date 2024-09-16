@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a9a9e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px; /* ลดขนาด border-radius */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* ลด padding */
+    width: 90%;
+    max-width: 400px; /* ลดขนาด max-width */
+}
+
+.topupinfo label {
+    font-size: 16px; /* ลดขนาดฟอนต์ */
+    margin-bottom: 5px; /* ลด margin-bottom */
+    display: block;
+    color: #333333;
+}
+
+.topupinfo input[type="text"],
+.topupinfo input[type="radio"] {
+    width: calc(100% - 20px); /* ลดความกว้างของฟิลด์ */
+    padding: 10px; /* ลด padding */
+    margin-bottom: 15px; /* ลด margin-bottom */
+    border-radius: 5px; /* ลด border-radius */
+    border: 1px solid #ddd;
+    font-size: 16px; /* ลดขนาดฟอนต์ */
+    box-sizing: border-box;
+}
+
+.btnkey {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* ลด gap */
+    justify-content: center; /* จัดให้อยู่ตรงกึ่งกลางแนวตั้ง */
+    align-items: center; /* จัดให้อยู่ตรงกึ่งกลางแนวนอน */
+}
+
+.btnkey .box1, .btnkey .box2, .btnkey .box3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* เพิ่มความกว้างเต็มพื้นที่ */
+    max-width: 300px; /* กำหนดขนาดสูงสุดให้เหมาะสมกับหน้าจอ */
+}
+
+
+.btnkey button {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* ลด border-radius */
+    padding: 10px 20px; /* ลด padding */
+    cursor: pointer;
+    font-size: 16px; /* ลดขนาดฟอนต์ */
+    margin: 5px; /* ลด margin */
+    transition: background-color 0.3s;
+}
+
+.btnkey button:hover {
+    background-color: #ccc;
+}
+
+.btnkey button[value="topup"] {
+    background-color: #28a745; /* สีเขียว */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px; /* ลด padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* ลดขนาดฟอนต์ */
+}
+
+#incoming_money {
+    width: calc(100% - 20px); /* ลดความกว้างของฟิลด์ */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 20px; /* ลดขนาดฟอนต์ */
+    margin-bottom: 20px; /* ลด margin-bottom */
+    color: #333333;
+}
+
+.topupinfo select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: #ffffff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="%23333" stroke-width=".5" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* ลด background-position */
+    background-size: 10px; /* ลด background-size */
+}
+
+.btnkey button[value="withdraw"] {
+    background-color: #ff0000; /* สีแดง */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* ลดขนาดฟอนต์ */
+}
+
+.btnkey button[value="withdraw"]:hover {
+    background-color: #cc0000;
+}
+
+.back-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* ลดขนาดฟอนต์ */
+    margin-top: 15px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}

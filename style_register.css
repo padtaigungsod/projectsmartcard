@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    font-size: 20px;
+    background: beige;
+
+}
+.header{
+    width: 30%;
+    margin: 50px auto 0px;
+    color: black;
+    background: aquamarine;
+    text-align: center;
+    border: 1px solid cadetblue;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px;
+
+}
+form, .content{
+    width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid lightgoldenrodyellow;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+
+
+}
+.input-Group{
+    margin: 10px 0px 10px 0px;
+
+}
+.input-group label{
+    display: block;
+    text-align: left;
+    margin: 3px;
+
+}
+.input-Group input{
+    height: 30px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+
+}
+
+.btn{
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background: darkgreen;
+    border: none;
+    border-radius: 5px;
+}
+.manageadmin-button{
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: white;
+    background-color: darkred;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
